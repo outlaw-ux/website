@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OutlawUX is a boutique agency delivering luxury user experiences, websites, design systems, and branded digital experiences. Clean, direct, unforgettable.">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="keywords" content="UX design, website development, design systems, brand identity, luxury design, OutlawUX, boutique agency">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://outlawux.com/">
+  <meta property="og:title" content="OutlawUX | Luxury Design. Zero Bullshit.">
+  <meta property="og:description" content="Boutique agency blending rugged refinement with luxury design. Websites, UX, branding, and high-impact digital experiences.">
+  <meta property="og:image" content="https://outlawux.com/og-image.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://outlawux.com/">
+  <meta property="twitter:title" content="OutlawUX | Luxury Design. Zero Bullshit.">
+  <meta property="twitter:description" content="Luxury user experience agency creating boutique designs, brands, and digital experiences.">
+  <meta property="twitter:image" content="https://outlawux.com/og-image.png">
+
+  <title>OutlawUX</title>
+  <style>
+    @font-face {
+      font-family: 'Garet';
+      src:  url('Garet-Book.woff2') format('woff2'),
+            url('Garet-Book.woff') format('woff');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1e1e1e;
+    }
+    figure, img {
+      min-width: 50vw;
+      max-width: 100%;
+      height: auto;
+    }
+    img {
+      display: block;
+    }
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 400;
+    }
+    figcaption {
+      text-align: center;
+      color: #ffffff;
+      font-family: Garet, Helvetica-neue, Helvetica, Arial, sans-serif;
+      font-size: 1.2em;
+      margin-top: 10px;
+
+      span {
+        &:before {
+          content: "info@"
+        }
+
+        &:after {
+          content: "OutlawUX.com"
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+  <figure>
+    <img src="OutlawUX-1x.png" alt="OutlawUX: Luxury Design. Zero Bullshit." srcset="OutlawUX-1x.png, OutlawUX-2x.png 2x, OutlawUX-3x.png 3x" />
+    <figcaption><span></span></figcaption>
+  </figure>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sendTo = getComputedStyle(document.querySelector('figcaption span'), ':before').getPropertyValue('content');
+      const domain = getComputedStyle(document.querySelector('figcaption span'), ':after').getPropertyValue('content');
+
+      const anchorElement = document.createElement('a');
+      anchorElement.href = (`mailto:${sendTo}${domain}`).replace(/"/g, '');
+
+      const figureElement = document.querySelector('figure');
+
+      if (figureElement && figureElement.parentNode) {
+        figureElement.parentNode.insertBefore(anchorElement, figureElement);
+        anchorElement.appendChild(figureElement);
+      }
+    });
+  </script>
+</body>
+</html>
